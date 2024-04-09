@@ -93,5 +93,5 @@ get("/scissors") do
   @theirmove = "They played #{result}!"
   @outcome =  "We #{finality}!"
 	
-	erb(:scissors)
+	erb(:scissors_setup)
 end
