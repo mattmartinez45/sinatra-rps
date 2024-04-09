@@ -39,3 +39,59 @@ get("/rock") do
 	
 	erb(:rock)
 end
+
+get("/paper") do
+  move = rand(1..3)
+  result = ""
+  finality = ""
+	if move == 1
+    result = "rock"
+  elsif move == 2
+    result = "paper"
+  elsif move == 3
+    result = "scissors"
+  end
+
+  if result == "rock"
+    finality = "won"
+  elsif result == "paper"
+    finality = "tied"
+  elsif result == "scissors"
+    finality = "lost"
+  end
+
+	
+	@ourmove = "We played rock!"
+  @theirmove = "They played #{result}!"
+  @outcome =  "We #{finality}!"
+	
+	erb(:paper)
+end
+
+get("/scissors") do
+  move = rand(1..3)
+  result = ""
+  finality = ""
+	if move == 1
+    result = "rock"
+  elsif move == 2
+    result = "paper"
+  elsif move == 3
+    result = "scissors"
+  end
+
+  if result == "rock"
+    finality = "lost"
+  elsif result == "paper"
+    finality = "won"
+  elsif result == "scissors"
+    finality = "tied"
+  end
+
+	
+	@ourmove = "We played rock!"
+  @theirmove = "They played #{result}!"
+  @outcome =  "We #{finality}!"
+	
+	erb(:scissors)
+end
