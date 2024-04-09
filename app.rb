@@ -33,9 +33,9 @@ get("/rock") do
   end
 
 	
-	ourmove = "We played rock!"
-  theirmove = "They played #{result}!"
-  outcome =  "We #{finality}!"
+	@ourmove = "We played rock!"
+  @theirmove = "They played #{result}!"
+  @outcome =  "We #{finality}!"
 
   erb(:rock_setup)
   
