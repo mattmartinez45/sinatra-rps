@@ -10,3 +10,14 @@ BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 get("/") do
   erb(:homepage)
 end
+
+
+get("/rock") do
+  first_die = rand(1..6)
+	second_die = rand(1..6)
+  sum = first_die + second_die
+	
+	@outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+	
+	erb(:two_six)
+end
