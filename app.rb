@@ -13,13 +13,29 @@ end
 
 
 get("/rock") do
-  first_die = rand(1..6)
-	second_die = rand(1..6)
-  sum = first_die + second_die
+  move = rand(1..3)
+  result = ""
+  finality = ""
+	if move == 1
+    result = "rock"
+  elsif move == 2
+    result = "paper"
+  elsif move == 3
+    result = "scissors"
+  end
+
+  if result == "rock"
+    finality = "tied"
+  elsif result == "paper"
+    finality = "lost"
+  elsif result == "scissors"
+    finality = "won"
+  end
+
 	
-	@outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+	@ourmove = "We played rock!"
+  @theirmove = "They played #{result}!"
+  @outcome =  "We #{finality}!"
 	
-	erb(:two_six)
+	erb(:rock)
 end
-
-
