@@ -62,7 +62,7 @@ get("/paper") do
   end
 
 	
-	@ourmove = "We played rock!"
+	@ourmove = "We played paper!"
   @theirmove = "They played #{result}!"
   @outcome =  "We #{finality}!"
 	
@@ -90,7 +90,7 @@ get("/scissors") do
   end
 
 	
-	@ourmove = "We played rock!"
+	@ourmove = "We played scissors!"
   @theirmove = "They played #{result}!"
   @outcome =  "We #{finality}!"
 	
