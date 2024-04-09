@@ -8,7 +8,7 @@ BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 get("/") do
-  erb(:layout)
+  erb(:homepage)
 end
 
 
@@ -33,11 +33,12 @@ get("/rock") do
   end
 
 	
-	@ourmove = "We played rock!"
-  @theirmove = "They played #{result}!"
-  @outcome =  "We #{finality}!"
-	
-	erb(:rock)
+	ourmove = "We played rock!"
+  theirmove = "They played #{result}!"
+  outcome =  "We #{finality}!"
+
+  erb(:rock_setup)
+  
 end
 
 get("/paper") do
@@ -65,7 +66,7 @@ get("/paper") do
   @theirmove = "They played #{result}!"
   @outcome =  "We #{finality}!"
 	
-	erb(:paper)
+	erb(:paper_setup)
 end
 
 get("/scissors") do
